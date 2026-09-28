@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel Map — Cynthia Chen Ting-Ju</title>
+<meta name="description" content="A world map of the places Cynthia Chen Ting-Ju has actually stood in.">
+<meta name="theme-color" content="#F7F3ED">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Travel Map — Cynthia Chen Ting-Ju">
+<meta property="og:description" content="Every place I have stood, pinned on a world map.">
+<meta property="og:image" content="assets/img/og-travel.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23B4512A'/%3E%3Cpath d='M23 10a9 9 0 1 0 0 12' fill='none' stroke='%23F7F3ED' stroke-width='4.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/travel.css">
+</head>
+<body class="page-travel">
+
+<a class="skip" href="#map">Skip to the map</a>
+
+<header class="nav is-stuck" id="nav">
+  <a class="nav__mark" href="index.html" aria-label="Cynthia Chen Ting-Ju — home">
+    CYNTHIA</a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#engineering"><span class="nav__idx">01</span> Under the Hood</a>
+    <a href="index.html#offclock"><span class="nav__idx">02</span> Off the Clock</a>
+    <a href="travel.html" aria-current="page"><span class="nav__idx">03</span> Travel</a>
+    <a href="index.html#contact"><span class="nav__idx">04</span> Contact</a>
+  </nav>
+  <a class="nav__cta" href="index.html">&larr; Back home</a>
+  <button class="nav__burger" id="burger" aria-expanded="false" aria-label="Open menu">
+    <span></span><span></span>
+  </button>
+</header>
+
+<main class="atlas">
+
+  <!-- ---------------- sidebar ---------------- -->
+  <aside class="atlas__panel">
+    <div class="atlas__head">
+      <p class="kicker">03 — the map</p>
+      <h1 class="atlas__title">EVERYWHERE<br>I&rsquo;VE BEEN</h1>
+      <p class="atlas__lede">Places I have actually stood in — not a wishlist. Pick a pin, or scroll
+        the list.</p>
+
+      <p class="atlas__pinned"><b id="statPlaces">0</b> pinned so far &mdash; there are
+        more I have not got round to adding.</p>
+
+      <div class="atlas__filters" id="filters" role="group" aria-label="Filter places">
+        <button type="button" class="fchip is-on" data-kind="all">All</button>
+      </div>
+    </div>
+
+    <ol class="atlas__list" id="placeList"></ol>
+
+    <p class="atlas__note">
+      Add a place by editing <code>js/travel-data.js</code> — the map, the list and the
+      counters all read from that one file.
+    </p>
+  </aside>
+
+  <!-- ---------------- map ---------------- -->
+  <div class="atlas__map" id="map" role="region" aria-label="World map of places visited">
+    <noscript>
+      <p class="atlas__fallback">The map needs JavaScript. The full list of places is in the panel.</p>
+    </noscript>
+  </div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/travel-data.js"></script>
+<script src="js/site.js"></script>
+<script src="js/travel.js"></script>
+</body>
+</html>

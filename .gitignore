@@ -1,0 +1,48 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# ---------------------------------------------------------------
+# Full-resolution originals.
+#
+# Everything the site actually loads is a processed, web-sized copy
+# sitting directly in assets/img/<section>/. These folders hold the
+# untouched camera and phone files they were cut from — roughly
+# 290 MB — which is far too heavy to commit or to deploy.
+#
+# They stay on your disk so you can re-crop from them at any time;
+# they just never leave your machine. If you want them backed up,
+# put them somewhere like Google Drive rather than in this repo.
+# ---------------------------------------------------------------
+assets/img/high school/
+assets/img/photography/
+assets/img/sharing/
+assets/img/Taiwan Community/
+assets/img/projects/FAST/
+assets/img/projects/Roboracer/
+assets/img/projects/CNN/
+assets/img/projects/URECA/
+assets/img/travel/China/
+assets/img/travel/Italy/
+assets/img/travel/Japan/
+assets/img/travel/Korea/
+assets/img/travel/Malaysia/
+assets/img/travel/Thailand/
+assets/img/travel/Turkey/
+assets/img/travel/UK/
+assets/img/travel/US/
+assets/img/travel/Vienna/
+
+# HEIC never renders in a browser — convert to JPEG before using
+*.heic
+*.HEIC
+
+# scratch
+__shot.html
+assets/img/art/
+assets/img/music/FB_IMG_*
+
+# Delta photos are kept off the site (and out of the public repo) for now
+assets/img/projects/delta-lab*.jpg
