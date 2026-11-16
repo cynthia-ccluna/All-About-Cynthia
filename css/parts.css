@@ -77,7 +77,6 @@
   text-transform:uppercase; color:var(--muted) !important;
 }
 .rail-block + .rail-block{ border-top:1px solid var(--line); padding-top:clamp(2.5rem,5vw,4rem); }
-.rail__nav{ display:flex; gap:.6rem; flex:none; }
 
 /* The first card lines up with the heading above it; the rail only bleeds
    off the right edge. No scroll-snap — it would fight the car. */
@@ -90,6 +89,8 @@
 }
 .rail::-webkit-scrollbar{ display:none; }
 .rail .ev{ flex:0 0 clamp(240px, 21vw, 310px); }
+/* the car does the navigating here; dots alone say there is another shot */
+.rail .gallery__next{ display:none; }
 
 /* ================= EVENT CARD ================= */
 .ev .ev__media{ border-radius:12px; }
@@ -113,10 +114,14 @@
 .ev__note{ display:block; margin-top:.3rem; font-size:.84rem; line-height:1.45; color:var(--ink-2); }
 
 /* the results sheet, for events without photos */
+/* Everything inside is sized in --u, which shrinks with narrower cards,
+   so the sheet always matches the photos beside it. */
 .ev__sheet{
-  aspect-ratio:4/5;
-  display:flex; flex-direction:column; gap:1.1rem;
-  padding:clamp(1.1rem,1.6vw,1.5rem);
+  --u:min(1.15px, .38cqi);
+  container-type:inline-size;
+  aspect-ratio:4/5; overflow:hidden;
+  display:flex; flex-direction:column;
+  padding:7.5%;
   border-radius:12px;
   background:var(--ink); color:var(--paper);
   background-image:
@@ -126,34 +131,37 @@
   background-repeat:repeat-x; background-origin:border-box;
 }
 .ev__sheet-kicker{
-  font:600 .6rem/1 var(--mono); letter-spacing:.22em; text-transform:uppercase;
+  font:600 calc(9.6 * var(--u))/1 var(--mono); letter-spacing:.22em; text-transform:uppercase;
   color:var(--accent-2); padding-top:14px;
 }
-.ev__league{ padding-top:.9rem; border-top:1px solid rgba(247,243,237,.16); }
+.ev__league{
+  margin-top:calc(17 * var(--u)); padding-top:calc(14 * var(--u));
+  border-top:1px solid rgba(247,243,237,.16);
+}
 .ev__league b{
   display:block;
   font-family:var(--display); font-stretch:86%; font-weight:800;
-  font-size:1rem; letter-spacing:-.02em; line-height:1.15;
+  font-size:calc(16 * var(--u)); letter-spacing:-.02em; line-height:1.15;
 }
 .ev__league i{
-  display:block; font-style:normal; margin:.3rem 0 .6rem;
-  font:500 .6rem/1 var(--mono); letter-spacing:.14em; text-transform:uppercase;
+  display:block; font-style:normal; margin:calc(4.8 * var(--u)) 0 calc(9.6 * var(--u));
+  font:500 calc(9.6 * var(--u))/1 var(--mono); letter-spacing:.14em; text-transform:uppercase;
   color:rgba(247,243,237,.6);
 }
-.ev__league dl{ display:grid; gap:.35rem; margin:0; }
+.ev__league dl{ display:grid; gap:calc(5.6 * var(--u)); margin:0; }
 .ev__league dl div{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; }
 .ev__league dt{
-  font:400 .62rem/1.3 var(--mono); letter-spacing:.08em; text-transform:uppercase;
+  font:400 calc(9.9 * var(--u))/1.3 var(--mono); letter-spacing:.08em; text-transform:uppercase;
   color:rgba(247,243,237,.72);
 }
 .ev__league dd{
   margin:0; white-space:nowrap;
   font-family:var(--display); font-stretch:80%; font-weight:900;
-  font-size:1.7rem; line-height:1; letter-spacing:-.03em; color:var(--accent-2);
+  font-size:calc(27 * var(--u)); line-height:1; letter-spacing:-.03em; color:var(--accent-2);
 }
 .ev__league dd small{
-  font:400 .6rem/1 var(--mono); letter-spacing:.06em;
-  color:rgba(247,243,237,.6); margin-left:.4rem;
+  font:400 calc(9.6 * var(--u))/1 var(--mono); letter-spacing:.06em;
+  color:rgba(247,243,237,.6); margin-left:calc(6.4 * var(--u));
 }
 
 /* the Hearing Hypertension timeline sits in a grid, not a rail */
@@ -165,7 +173,7 @@
 
 /* ================= DRAG THE CAR ================= */
 .drive{
-  position:relative; height:78px; margin:.4rem 0 .9rem;
+  position:relative; height:78px; margin:.2rem 0 1.2rem;
   cursor:pointer; touch-action:pan-y;
 }
 .drive.is-idle{ display:none; }
@@ -225,7 +233,6 @@
 }
 @media (max-width:820px){
   .rail-block__head{ flex-direction:column; align-items:flex-start; }
-  .rail__nav{ display:none; }
   .drive__car{ width:118px; }
 }
 
@@ -342,17 +349,6 @@
   }
 }
 
-/* ================= TABS ================= */
-.tabs{ display:flex; gap:.4rem; margin-top:1.4rem; flex-wrap:wrap; }
-.tab{
-  font:600 .66rem/1 var(--mono); letter-spacing:.12em; text-transform:uppercase;
-  padding:.6rem 1rem; border-radius:100px;
-  border:1px solid var(--line); color:var(--ink-2);
-  transition:background .3s, color .3s, border-color .3s;
-}
-.tab:hover{ border-color:var(--accent); color:var(--accent); }
-.tab.is-on{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
-
 /* ================= CLICK-THROUGH GALLERY ================= */
 .gallery{
   position:relative; margin:0; overflow:hidden;
@@ -391,9 +387,6 @@
 .gallery--single .gallery__ui{ display:none; }
 .gallery--single{ cursor:default; }
 
-.tile__panels .gallery{ display:none; }
-.tile__panels .gallery.is-on{ display:block; }
-
 @media (prefers-reduced-motion: reduce){
   .deck__card, .score__item, .score__sheet, .gallery img, .drive__car svg{
     transition:none;
@@ -419,8 +412,53 @@
   font-family:var(--display); font-weight:900; font-stretch:68%;
   font-size:clamp(2.3rem,8.8vw,9.5rem);
   line-height:.9; letter-spacing:-.04em;
+  /* the condensed face has a hairline space; open it up between words */
+  word-spacing:.16em;
   text-transform:uppercase;
   padding-bottom:.06em;
 }
 .credo__line .line:nth-child(3){ margin-top:clamp(.8rem,2.4vw,2rem); }
 .credo__line .line:last-child > span{ color:var(--accent); }
+
+/* The sequence: each serif line slides up, then the big words rise one at
+   a time behind it. site.js wraps each big word in a .w span. */
+.credo .line > .credo__soft{ transition-delay:calc(var(--d,0ms) * 3); }
+.credo .line > .credo__big{ transform:none; transition:none; }
+.credo .w{
+  display:inline-block;
+  transform:translateY(108%) rotate(6deg); transform-origin:0 100%;
+  transition:transform .9s var(--ease-out);
+  transition-delay:calc(var(--d,0ms) * 3 + var(--wi,0) * 110ms);
+}
+.credo .is-in .w{ transform:none; }
+
+/* ...and "see it through" arrives as an outline and fills in left to
+   right, like something being finished. --wc is the number of letters
+   before the word, --wl its own length, so the fill moves at one speed. */
+.credo__big--fill .w{
+  color:transparent;
+  -webkit-text-stroke:max(1px,.014em) var(--accent);
+  background:linear-gradient(var(--accent),var(--accent)) 0 0 / 0% 100% no-repeat;
+  -webkit-background-clip:text; background-clip:text;
+  /* the tight tracking lets glyphs overhang the box; pad it so the fill
+     reaches every edge */
+  padding:.04em .06em; margin:-.04em -.06em;
+  /* once a word is full it turns solid, which hides the hairline seams
+     the outline leaves between overlapping letters */
+  transition-property:transform, background-size, color, -webkit-text-stroke-color;
+  transition-timing-function:var(--ease-out), linear, linear, linear;
+  transition-duration:.9s, calc(var(--wl,4) * 70ms), .2s, .2s;
+  transition-delay:
+    calc(var(--d,0ms) * 3 + var(--wi,0) * 110ms),
+    calc(1.7s + var(--wc,0) * 70ms),
+    calc(1.7s + (var(--wc,0) + var(--wl,4)) * 70ms),
+    calc(1.7s + (var(--wc,0) + var(--wl,4)) * 70ms);
+}
+.credo .is-in .credo__big--fill .w{
+  background-size:100% 100%; color:var(--accent); -webkit-text-stroke-color:transparent;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .credo .w{ transform:none; transition:none; }
+  .credo__big--fill .w{ background-size:100% 100%; color:var(--accent); -webkit-text-stroke-color:transparent; }
+}

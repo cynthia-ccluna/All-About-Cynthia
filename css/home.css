@@ -223,22 +223,18 @@
   color:var(--muted); padding-top:.6rem; white-space:nowrap;
 }
 
-.work__shots{
-  display:grid; gap:1rem;
-  grid-template-columns:repeat(auto-fit, minmax(0,1fr));
-  max-height:0; opacity:0; overflow:hidden;
-  transition:max-height .7s var(--ease), opacity .5s var(--ease), margin .7s var(--ease);
+/* an entry with a photo gets a third column for it, beside the copy */
+.work__link:has(.work__shot){
+  grid-template-columns:70px minmax(0,58ch) minmax(200px,360px) 1fr;
 }
-.work__item:hover .work__shots,
-.work__item:focus-within .work__shots{
-  max-height:34rem; opacity:1; margin-bottom:clamp(1.5rem,3vw,2.4rem);
-}
-.work__shots .media img{ aspect-ratio:4/3; border-radius:6px; }
+.work__shot{ align-self:center; }
+.work__link:has(.work__shot) .work__year{ justify-self:end; }
 
 @media (max-width:820px){
-  .work__link{ grid-template-columns:44px minmax(0,1fr); }
+  .work__link,
+  .work__link:has(.work__shot){ grid-template-columns:44px minmax(0,1fr); }
+  .work__shot{ grid-column:2; }
   .work__year{ grid-column:2; padding-top:.8rem; }
-  .work__shots{ max-height:none; opacity:1; overflow:visible; margin-bottom:1.6rem; grid-template-columns:1fr 1fr; }
 }
 
 /* ---------- teaching block ---------- */
@@ -270,11 +266,8 @@
   transition:border-color .4s var(--ease), transform .5s var(--ease);
 }
 .tile:hover{ border-color:var(--accent); transform:translateY(-4px); }
-.tile--wide{ grid-column:1 / -1; grid-template-columns:.92fr 1.08fr; align-items:center; }
 .tile__img{ margin:0; border-radius:6px; overflow:hidden; }
 .tile__img img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
-.tile--wide .gallery img{ aspect-ratio:4/5; }
-.tile__panels{ min-width:0; }
 .tile .media.is-empty{ aspect-ratio:1/1; border-radius:6px; }
 .tile__title{
   font-family:var(--display); font-weight:800; font-stretch:86%;
@@ -285,7 +278,6 @@
 .tile__text p{ color:var(--ink-2); font-size:.94rem; max-width:40ch; }
 @media (max-width:900px){
   .tiles{ grid-template-columns:1fr; }
-  .tile--wide{ grid-template-columns:1fr; }
   .tile__img--second{ display:none; }
 }
 

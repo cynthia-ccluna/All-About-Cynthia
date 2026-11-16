@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cynthia Chen Ting-Ju — Engineer</title>
-<meta name="description" content="Chen Ting-Ju (Cynthia) — Electrical &amp; Electronic Engineering at NTU Singapore. Team lead of NTU DeepSpeed autonomous racing; computer vision and embedded AI. Off the clock: choir, violin, photography and a well-used passport.">
+<meta name="description" content="Chen Ting-Ju (Cynthia) — Electrical &amp; Electronic Engineering at NTU Singapore. Former team lead of NTU DeepSpeed autonomous racing and perception co-lead at Robo@EEE; computer vision and embedded AI. Off the clock: choir, violin and a well-used passport.">
 <meta name="theme-color" content="#F7F3ED">
 
 <meta property="og:type" content="website">
@@ -110,11 +110,11 @@
 
 <!-- ============================ CREDO ============================ -->
 <section class="credo" id="intro">
-  <h2 class="credo__line lines reveal">
+  <h2 class="credo__line lines" data-credo>
     <span class="line"><span class="credo__soft">Driven by curiosity to</span></span>
     <span class="line"><span class="credo__big">start the impossible,</span></span>
     <span class="line"><span class="credo__soft">powered by action to</span></span>
-    <span class="line"><span class="credo__big">see it through.</span></span>
+    <span class="line"><span class="credo__big credo__big--fill">see it through.</span></span>
   </h2>
 </section>
 
@@ -155,24 +155,15 @@
           specifications. The ultimate goal is to develop sophisticated software that
           optimizes racing performance and speed while safely navigating the track
           without collisions.</p>
+        <p class="rail-block__meta">Previous team lead</p>
         <p class="rail-block__links">
           <a href="https://ntudeepspeed.github.io/" target="_blank" rel="noopener">Team site <span aria-hidden="true">↗</span></a>
         </p>
       </div>
-      <div class="rail__nav">
-        <button class="arrow arrow--back" type="button" data-rail-prev aria-label="Previous events">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
-        </button>
-        <button class="arrow" type="button" data-rail-next aria-label="More events">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-      </div>
     </div>
-    <ol class="rail" id="eventRail" aria-label="NTU DeepSpeed events"></ol>
 
     <!-- drag the car to drive through the season -->
+    <p class="rail__hint">Drag the car to drive through the season</p>
     <div class="drive" data-drive>
       <div class="drive__track" aria-hidden="true"></div>
       <div class="drive__car" role="slider" tabindex="0"
@@ -191,7 +182,7 @@
         </svg>
       </div>
     </div>
-    <p class="rail__hint">Drag the car to drive through the season</p>
+    <ol class="rail" id="eventRail" aria-label="NTU DeepSpeed events"></ol>
   </div>
 
   <!-- ---------- hearing hypertension ---------- -->
@@ -210,9 +201,28 @@
 
   <!-- ---------- the rest of the work ---------- -->
   <ol class="work">
+    <li class="work__item reveal" id="robocup">
+      <a class="work__link" href="#robocup">
+        <span class="work__no">03</span>
+        <span class="work__body">
+          <span class="work__title">Robo@EEE</span>
+          <span class="work__meta">Perception co-lead &middot; RoboCup@Home 2027</span>
+          <span class="work__copy">I co-lead perception for Robo@EEE as we prepare for
+            RoboCup@Home 2027, where service robots are tested on everyday tasks in a home.
+            I handle the human&ndash;robot interaction and pick-and-place challenges:
+            helping the robot notice and understand the people around it, then find,
+            grasp and place everyday objects.</span>
+        </span>
+        <!-- to add a photo: save it as assets/img/projects/robocup.jpg and uncomment
+        <figure class="media work__shot"><img src="assets/img/projects/robocup.jpg" alt="The Robo@EEE robot" loading="lazy"></figure>
+        -->
+        <span class="work__year">Ongoing</span>
+      </a>
+    </li>
+
     <li class="work__item reveal" id="embedded">
       <a class="work__link" href="#embedded">
-        <span class="work__no">03</span>
+        <span class="work__no">04</span>
         <span class="work__body">
           <span class="work__title">URECA Research</span>
           <span class="work__meta">Object detection on FPGA &middot; Undergraduate research</span>
@@ -223,16 +233,14 @@
             entire journey was finally watching the live camera stream successfully
             identify objects and dynamically draw bounding boxes in real time.</span>
         </span>
+        <figure class="media work__shot"><img src="assets/img/projects/ureca-fpga.jpg" alt="Live camera stream running object detection on the FPGA" loading="lazy"></figure>
         <span class="work__year">2025 &mdash;</span>
       </a>
-      <div class="work__shots">
-        <figure class="media"><img src="assets/img/projects/ureca-fpga.jpg" alt="Live camera stream running object detection on the FPGA" loading="lazy"></figure>
-      </div>
     </li>
 
     <li class="work__item reveal" id="industry">
       <a class="work__link" href="#industry">
-        <span class="work__no">04</span>
+        <span class="work__no">05</span>
         <span class="work__body">
           <span class="work__title">Delta Electronics</span>
           <span class="work__meta">Intern &middot; AISBD</span>
@@ -340,52 +348,6 @@
   </div>
 
   <div class="tiles">
-    <!-- ---------- photography, with tabs ---------- -->
-    <article class="tile tile--wide reveal" id="photography">
-      <div class="tile__text">
-        <p class="kicker">Photography</p>
-        <h3 class="tile__title">In front of it<br>and behind it</h3>
-        <p>Shooting taught me to actually look at something — proportion, weight, where
-          the light falls. The same attention I bring to a sensor plot. These were shot
-          professionally on location.</p>
-        <div class="tabs" data-tabs>
-          <button class="tab is-on" type="button" data-tab="china">China</button>
-          <button class="tab" type="button" data-tab="thailand">Thailand</button>
-        </div>
-      </div>
-      <div class="tile__panels">
-        <figure class="gallery is-on" data-gallery data-panel="china">
-          <img src="assets/img/gallery/china-1.jpg" alt="Photographed in Chinese dress" loading="lazy">
-          <img src="assets/img/gallery/china-2.jpg" alt="Photographed in Chinese dress" loading="lazy" hidden>
-          <img src="assets/img/gallery/china-3.jpg" alt="Photographed in Chinese dress" loading="lazy" hidden>
-          <img src="assets/img/gallery/china-4.jpg" alt="Photographed in Chinese dress" loading="lazy" hidden>
-          <img src="assets/img/gallery/china-5.jpg" alt="Photographed in Chinese dress" loading="lazy" hidden>
-        </figure>
-        <figure class="gallery" data-gallery data-panel="thailand" hidden>
-          <img src="assets/img/gallery/thailand-1.jpg" alt="Photographed in Thai dress at Wat Pho" loading="lazy">
-          <img src="assets/img/gallery/thailand-2.jpg" alt="Photographed in Thai dress at Wat Arun" loading="lazy" hidden>
-        </figure>
-      </div>
-    </article>
-
-    <!-- ---------- making ---------- -->
-    <article class="tile reveal" id="making">
-      <figure class="gallery" data-gallery>
-        <img src="assets/img/gallery/art-1.jpg" alt="Crochet work" loading="lazy">
-        <img src="assets/img/gallery/art-2.jpg" alt="A painted fish market" loading="lazy" hidden>
-        <img src="assets/img/gallery/art-3.jpg" alt="Crochet work in progress" loading="lazy" hidden>
-        <img src="assets/img/gallery/art-4.jpg" alt="Crochet coasters" loading="lazy" hidden>
-        <img src="assets/img/gallery/art-5.jpg" alt="A crochet pouch" loading="lazy" hidden>
-      </figure>
-      <div class="tile__text">
-        <p class="kicker">Making</p>
-        <h3 class="tile__title">Patience,<br>with your hands</h3>
-        <p>Drawing and crochet. One stitch is trivial, ten thousand is a bag, and there
-          is no shortcut through the middle — the same lesson I keep relearning at a
-          workbench.</p>
-      </div>
-    </article>
-
     <!-- ---------- japanese ---------- -->
     <article class="tile reveal" id="japanese">
       <figure class="gallery" data-gallery>

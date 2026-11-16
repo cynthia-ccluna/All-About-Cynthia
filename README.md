@@ -10,14 +10,39 @@ index.html          hero → credo → Under the Hood → Off the Clock → trav
 travel.html         the world map
 css/base.css        tokens, nav, buttons, scroll animation, footer
 css/home.css        the split hero and the two bands
-css/parts.css       deck · event cards · drag-the-car · the score · tabs · galleries
+css/parts.css       deck · event cards · drag-the-car · the score · galleries · credo
 css/travel.css      the atlas page
 js/events-data.js   ← every event card lives here (DeepSpeed + Hearing Hypertension)
 js/travel-data.js   ← every travel pin lives here.
-js/site.js          nav, animation, event cards, the car, galleries, tabs, the score
+js/site.js          nav, animation, event cards, the car, galleries, the credo, the score
 js/hero.js          the hero split interaction
 assets/             photos and the résumé PDF
 ```
+
+---
+
+## Where the words live
+
+Almost every sentence on the site is plain text in an HTML or data file. Search
+for a few words of it, change it, save, refresh. No build step.
+
+| What | File | Look for |
+|---|---|---|
+| Hero cards, the credo, band headings | `index.html` | `HERO`, `CREDO`, `band__lede` |
+| DeepSpeed and Hearing Hypertension intros | `index.html` | `rail-block__head` |
+| The event cards themselves | `js/events-data.js` | one `{ … }` per card |
+| Robo@EEE, URECA, Delta (the numbered list) | `index.html` | `work__copy` |
+| Teaching & leadership roles | `index.html` | `class="roles"` |
+| Music, 日本語, Passing it on | `index.html` | `score__item`, `tile__text` |
+| Socials and contact | `index.html` | `socials`, `CONTACT` |
+| Travel pins | `js/travel-data.js` | one `{ … }` per pin |
+| The search/link-preview description | `index.html` | `<meta name="description">` |
+
+Inside HTML, write `&amp;` for &, `&mdash;` for —, `&middot;` for ·. In the `.js`
+data files, text sits between single quotes, so write `it\'s` for an apostrophe.
+
+The two big credo lines are split into words by `site.js` for the animation, but
+the text itself stays plain in `index.html`.
 
 ---
 
@@ -53,11 +78,11 @@ photo becomes a click-through. The sim racing card uses `results` instead of
 | Where | What it does |
 |---|---|
 | Hero | Hover either side: that panel widens and returns to colour, the other eases back |
+| **Credo** | Big words rise one at a time; "see it through" arrives as an outline and fills in left to right |
 | **Overview deck** | Four fanned cards at the top of Under the Hood. Hover straightens and lifts one; click jumps to that block |
-| **Drag the car** | Under the DeepSpeed rail. Drag the car along the track to scroll the events; click the track to drive there; arrow keys work when it is focused. Trackpad scrolling moves the car too, and the wheels turn |
+| **Drag the car** | Above the DeepSpeed rail. Drag the car along the track to scroll the events; click the track to drive there; arrow keys work when it is focused. Trackpad scrolling moves the car too, and the wheels turn |
 | **Open the score** | The sheet music opens as it scrolls into view and the three instruments come out of it. Click the sheet to close and reopen |
-| **Galleries** | Any picture with more than one shot gets dots and a next arrow — click anywhere on it to advance |
-| **Tabs** | Photography switches between China and Thailand |
+| **Galleries** | Any picture with more than one shot gets dots and a next arrow — click anywhere on it to advance. On the DeepSpeed rail only the dots show |
 
 Everything honours `prefers-reduced-motion`.
 
@@ -67,11 +92,16 @@ Everything honours `prefers-reduced-motion`.
 
 "Driven by curiosity to *start the impossible*, powered by action to *see it
 through*" — set in two voices in the `.credo` section: the setup lines in the italic
-serif, the payoff lines at poster size in the condensed display face.
+serif, the payoff lines at poster size in the condensed display face. The gap
+between the big words is `word-spacing` on `.credo__big` in `css/parts.css`.
 
 ## Media
 
 **Every empty slot draws itself as a dashed box with its file path inside.**
+
+Robo@EEE has no photo yet. Save one as `assets/img/projects/robocup.jpg` and
+uncomment the `<figure>` line inside that entry in `index.html`; it sits beside the
+text the same way URECA's does.
 
 Still to add: `assets/docs/Resume-Chen-Ting-Ju.pdf`, and `assets/img/og-cover.jpg`
 / `og-travel.jpg` (1200×630 link-share thumbnails).

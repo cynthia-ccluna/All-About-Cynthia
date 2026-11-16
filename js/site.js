@@ -1,6 +1,6 @@
 /* ============================================================
    site.js — nav, scroll animation, media slots, marquee,
-   event rail, click-through galleries, tabs, the score
+   event rail, click-through galleries, the credo, the score
    Shared by index.html and travel.html
    ============================================================ */
 (function () {
@@ -96,18 +96,10 @@
       var card = rail.querySelector('.ev');
       return card ? card.getBoundingClientRect().width + 16 : 300;
     };
-    var prev = document.querySelector('[data-rail-prev]');
-    var next = document.querySelector('[data-rail-next]');
-    if (prev) prev.addEventListener('click', function () {
-      rail.scrollBy({ left: -step() * 2, behavior: reduced ? 'auto' : 'smooth' });
-    });
-    if (next) next.addEventListener('click', function () {
-      rail.scrollBy({ left: step() * 2, behavior: reduced ? 'auto' : 'smooth' });
-    });
 
     /* ---- drag the car to drive the rail ----
        The car's position along the track is the rail's scroll position.
-       Scrolling the rail any other way (trackpad, arrows) moves the car. */
+       Scrolling the rail any other way (trackpad, keys) moves the car. */
     var drive = document.querySelector('[data-drive]');
     var car = drive && drive.querySelector('.drive__car');
     if (car) {
@@ -199,23 +191,6 @@
     ui.querySelector('.gallery__next').addEventListener('click', advance);
   });
 
-  /* ---------------- tabs ---------------- */
-  document.querySelectorAll('[data-tabs]').forEach(function (group) {
-    var scope = group.closest('.tile') || document;
-    group.addEventListener('click', function (e) {
-      var btn = e.target.closest('.tab');
-      if (!btn) return;
-      group.querySelectorAll('.tab').forEach(function (b) {
-        b.classList.toggle('is-on', b === btn);
-      });
-      scope.querySelectorAll('[data-panel]').forEach(function (p) {
-        var on = p.getAttribute('data-panel') === btn.getAttribute('data-tab');
-        p.classList.toggle('is-on', on);
-        p.hidden = !on;
-      });
-    });
-  });
-
   /* ---------------- the score ----------------
      Opens itself once it scrolls into view; the sheet also toggles it. */
   var score = document.querySelector('[data-score]');
@@ -245,6 +220,20 @@
       so.observe(score);
     }
   }
+
+  /* ---------------- the credo ----------------
+     The big lines are split into words so they can rise one at a time.
+     The text itself stays plain in index.html — edit it there. */
+  document.querySelectorAll('[data-credo] .credo__big').forEach(function (line) {
+    var words = line.textContent.trim().split(/\s+/);
+    var before = 0;
+    line.innerHTML = words.map(function (w, n) {
+      var span = '<span class="w" style="--wi:' + n + ';--wc:' + before + ';--wl:' + w.length + '">' +
+        esc(w) + '</span>';
+      before += w.length;
+      return span;
+    }).join(' ');
+  });
 
   /* ---------------- scroll animation ---------------- */
   var animated = document.querySelectorAll('.reveal, .lines, .uncover');
