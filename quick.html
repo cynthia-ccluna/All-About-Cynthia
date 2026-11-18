@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cynthia Chen Ting-Ju — Engineer</title>
+<meta name="description" content="Chen Ting-Ju (Cynthia) — Electrical &amp; Electronic Engineering at NTU Singapore. Former team lead of NTU DeepSpeed autonomous racing and perception co-lead at Robo@EEE; computer vision and embedded AI. Off the clock: choir, violin and a well-used passport.">
+<meta name="theme-color" content="#F7F3ED">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cynthia Chen Ting-Ju — Engineer">
+<meta property="og:description" content="Autonomous racing, computer vision and embedded AI — plus music, photography and travel.">
+<meta property="og:image" content="assets/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23B4512A'/%3E%3Cpath d='M23 10a9 9 0 1 0 0 12' fill='none' stroke='%23F7F3ED' stroke-width='4.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/parts.css">
+</head>
+<body class="page-home">
+
+<a class="skip" href="#intro">Skip to content</a>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <a class="nav__mark" href="#top" aria-label="Cynthia — home">CYNTHIA</a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#engineering"><span class="nav__idx">01</span> Under the Hood</a>
+    <a href="#offclock"><span class="nav__idx">02</span> Off the Clock</a>
+    <a href="travel.html"><span class="nav__idx">03</span> Travel</a>
+    <a href="#contact"><span class="nav__idx">04</span> Contact</a>
+  </nav>
+  <a class="nav__cta" href="assets/docs/Resume-Chen-Ting-Ju.pdf" target="_blank" rel="noopener">Résumé</a>
+  <button class="nav__burger" id="burger" aria-expanded="false" aria-label="Open menu">
+    <span></span><span></span>
+  </button>
+</header>
+
+<main>
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top">
+  <svg class="hero__contours" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M-40 250C180 120 420 180 560 330s60 330 260 360 420-140 420-330-180-300-60-420"/>
+      <path d="M-40 320C200 190 470 250 610 400s50 320 250 350 400-150 400-330-200-290-80-410"/>
+      <path d="M-40 390C220 260 520 320 660 470s40 310 240 340 380-160 380-330-220-280-100-400"/>
+      <path d="M-40 460C240 330 570 390 710 540s30 300 230 330 360-170 360-330-240-270-120-390"/>
+      <path d="M-40 530C260 400 620 460 760 610s20 290 220 320 340-180 340-330-260-260-140-380"/>
+      <path d="M-40 600C280 470 670 530 810 680s10 280 210 310 320-190 320-330-280-250-160-370"/>
+    </g>
+  </svg>
+
+  <figure class="hero__side hero__side--machine" data-side="machine">
+    <img src="assets/img/hero/machine.jpg" alt="Cynthia teaching a ROS2 workshop">
+  </figure>
+  <figure class="hero__side hero__side--human" data-side="human">
+    <img src="assets/img/hero/human.jpg" alt="Cynthia Chen Ting-Ju">
+  </figure>
+
+  <div class="hero__centre">
+    <p class="hero__eyebrow">Chen Ting-Ju &mdash; Cynthia</p>
+
+    <h1 class="hero__split">
+      <a class="halfcard" href="#engineering" data-side="machine">
+        <span class="halfcard__top">UNDER THE</span>
+        <span class="halfcard__big">HOOD</span>
+        <span class="halfcard__copy">Robotic systems, computer vision, and embodied
+          AI &mdash; building intelligence that interacts with the physical world.</span>
+        <span class="arrow arrow--back" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="halfcard" href="#offclock" data-side="human">
+        <span class="halfcard__top">OFF THE</span>
+        <span class="halfcard__big mark mark--under" data-mark>CLOCK
+          <svg viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M6 15c46-8 96-11 148-9 38 2 74 6 140 3"/>
+            <path d="M18 21c52-6 104-8 152-6 34 1 66 4 118 2"/>
+          </svg>
+        </span>
+        <span class="halfcard__copy">Immersed in music, capturing life through a
+          lens, and always planning the next travel adventure.</span>
+        <span class="arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </h1>
+
+    <p class="hero__foot">Nanyang Technological University &middot; Electrical and
+      Electronic Engineering</p>
+  </div>
+
+</section>
+
+<!-- ============================ MARQUEE ============================ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__row" data-marquee>
+    <span>ROS2</span><span>SLAM</span><span>LiDAR</span><span>FPGA</span><span>CNN</span>
+    <span>VLM</span><span>TensorFlow</span><span>Docker</span><span>Choir</span>
+    <span>Violin</span><span>Ukulele</span><span>JLPT N1</span><span>Photography</span>
+  </div>
+</div>
+
+<!-- ============================ CREDO ============================ -->
+<section class="credo" id="intro">
+  <h2 class="credo__line lines" data-credo>
+    <span class="line"><span class="credo__soft">Driven by curiosity to</span></span>
+    <span class="line"><span class="credo__big">start the impossible,</span></span>
+    <span class="line"><span class="credo__soft">powered by action to</span></span>
+    <span class="line"><span class="credo__big credo__big--fill">see it through.</span></span>
+  </h2>
+</section>
+
+<!-- ============================ UNDER THE HOOD ============================ -->
+<section class="band band--machine" id="engineering">
+  <header class="band__head">
+    <p class="kicker">01 &mdash; the work</p>
+    <h2 class="band__title lines">
+      <span class="line"><span>UNDER THE HOOD</span></span>
+    </h2>
+    <p class="band__lede">Building robotic systems, teaching them to see and decide with
+      machine learning, and sharing what I learn along the way.</p>
+  </header>
+
+  <!-- ---------- overview deck ---------- -->
+  <ul class="deck reveal" id="deck">
+    <li class="deck__card" style="--r:-8deg"><a href="#racing">
+      <img src="assets/img/events/ifac-2026.jpg" alt="" loading="lazy">
+      <span class="deck__label"><b>Autonomous Racing</b><i>NTU DeepSpeed</i></span></a></li>
+    <li class="deck__card" style="--r:-3deg"><a href="#vision">
+      <img src="assets/img/projects/hh-tisf-2.jpg" alt="" loading="lazy">
+      <span class="deck__label"><b>Deep Learning</b><i>CNN · heart sounds</i></span></a></li>
+    <li class="deck__card" style="--r:3deg"><a href="#embedded">
+      <img src="assets/img/projects/ureca-fpga.jpg" alt="" loading="lazy">
+      <span class="deck__label"><b>Hardware Acceleration</b><i>URECA · FPGA</i></span></a></li>
+    <li class="deck__card" style="--r:8deg"><a href="#teaching">
+      <img src="assets/img/events/ros2.jpg" alt="" loading="lazy">
+      <span class="deck__label"><b>Teaching</b><i>Workshops · committees</i></span></a></li>
+  </ul>
+
+  <!-- ---------- autonomous racing ---------- -->
+  <div class="rail-block reveal" id="racing">
+    <div class="rail-block__head">
+      <div>
+        <p class="kicker">01 &middot; Autonomous racing</p>
+        <h3 class="rail-block__title">NTU DeepSpeed</h3>
+        <p>We design, build, and program 1:10 scale autonomous vehicles to strict
+          specifications. The ultimate goal is to develop sophisticated software that
+          optimizes racing performance and speed while safely navigating the track
+          without collisions.</p>
+        <p class="rail-block__meta">Previous team lead</p>
+        <p class="rail-block__links">
+          <a href="https://ntudeepspeed.github.io/" target="_blank" rel="noopener">Team site <span aria-hidden="true">↗</span></a>
+        </p>
+      </div>
+    </div>
+
+    <!-- drag the car to drive through the season -->
+    <p class="rail__hint">Drag the car to drive through the season</p>
+    <div class="drive" data-drive>
+      <div class="drive__track" aria-hidden="true"></div>
+      <div class="drive__car" role="slider" tabindex="0"
+           aria-label="Drive through the events" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <svg viewBox="0 0 140 60" aria-hidden="true">
+          <ellipse class="car__shadow" cx="72" cy="56" rx="60" ry="3"/>
+          <path class="car__deck" d="M36 28.5h66"/>
+          <path class="car__post" d="M42 29v3M96 29v3"/>
+          <rect class="car__box" x="44" y="14" width="36" height="12" rx="2"/>
+          <path class="car__vent" d="M50 18h14M50 21.5h10"/>
+          <rect class="car__lidar" x="99" y="15" width="15" height="14" rx="4"/>
+          <rect class="car__lens" x="99" y="20.5" width="15" height="3"/>
+          <path class="car__body" d="M8 41c0-6.5 5-10 14-10h94c9 0 15 3.6 17 10v2H8z"/>
+          <g class="car__wheel"><circle cx="31" cy="44" r="12"/><circle class="car__hub" cx="31" cy="44" r="4.6"/><path d="M31 34.4v4.6M31 49v4.6M21.4 44H26M36 44h4.6"/></g>
+          <g class="car__wheel"><circle cx="111" cy="44" r="12"/><circle class="car__hub" cx="111" cy="44" r="4.6"/><path d="M111 34.4v4.6M111 49v4.6M101.4 44h4.6M116 44h4.6"/></g>
+        </svg>
+      </div>
+    </div>
+    <ol class="rail" id="eventRail" aria-label="NTU DeepSpeed events"></ol>
+  </div>
+
+  <!-- ---------- hearing hypertension ---------- -->
+  <div class="rail-block reveal" id="vision">
+    <div class="rail-block__head">
+      <div>
+        <p class="kicker">02 &middot; Deep learning</p>
+        <h3 class="rail-block__title">Hearing Hypertension</h3>
+        <p>Developed a deep-learning pipeline to classify blood-pressure levels from
+          heart-sound spectrograms using convolutional neural networks (CNN).</p>
+        <p class="rail-block__meta">First author &middot; Representing Taiwan &middot; 2022 &ndash; 23</p>
+      </div>
+    </div>
+    <ol class="evgrid" id="hhEvents" aria-label="Hearing Hypertension milestones"></ol>
+  </div>
+
+  <!-- ---------- the rest of the work ---------- -->
+  <ol class="work">
+    <li class="work__item reveal" id="robocup">
+      <a class="work__link" href="#robocup">
+        <span class="work__no">03</span>
+        <span class="work__body">
+          <span class="work__title">Robo@EEE</span>
+          <span class="work__meta">Perception co-lead &middot; RoboCup@Home 2027</span>
+          <span class="work__copy">I co-lead perception for Robo@EEE as we prepare for
+            RoboCup@Home 2027, where service robots are tested on everyday tasks in a home.
+            I handle the human&ndash;robot interaction and pick-and-place challenges:
+            helping the robot notice and understand the people around it, then find,
+            grasp and place everyday objects.</span>
+        </span>
+        <!-- to add a photo: save it as assets/img/projects/robocup.jpg and uncomment
+        <figure class="media work__shot"><img src="assets/img/projects/robocup.jpg" alt="The Robo@EEE robot" loading="lazy"></figure>
+        -->
+        <span class="work__year">Ongoing</span>
+      </a>
+    </li>
+
+    <li class="work__item reveal" id="embedded">
+      <a class="work__link" href="#embedded">
+        <span class="work__no">04</span>
+        <span class="work__body">
+          <span class="work__title">URECA Research</span>
+          <span class="work__meta">Object detection on FPGA &middot; Undergraduate research</span>
+          <span class="work__copy">This project challenged me to dive into a completely
+            unfamiliar domain, FPGA, and bridge my long-standing passion for image-based
+            deep learning with the field of hardware acceleration. I implemented and
+            optimized a Single Shot Detector on FPGA. The most fulfilling moment of this
+            entire journey was finally watching the live camera stream successfully
+            identify objects and dynamically draw bounding boxes in real time.</span>
+        </span>
+        <figure class="media work__shot"><img src="assets/img/projects/ureca-fpga.jpg" alt="Live camera stream running object detection on the FPGA" loading="lazy"></figure>
+        <span class="work__year">2025 &mdash;</span>
+      </a>
+    </li>
+
+    <li class="work__item reveal" id="industry">
+      <a class="work__link" href="#industry">
+        <span class="work__no">05</span>
+        <span class="work__body">
+          <span class="work__title">Delta Electronics</span>
+          <span class="work__meta">Intern &middot; AISBD</span>
+          <span class="work__copy">Developing and optimizing a vision-language model (VLM)
+            pipeline that runs on a mobile robot.</span>
+        </span>
+        <span class="work__year">2026</span>
+      </a>
+    </li>
+  </ol>
+
+  <!-- ---------- teaching & leadership ---------- -->
+  <div class="teach reveal" id="teaching">
+    <figure class="media media--wide uncover">
+      <img src="assets/img/projects/ros2-workshop.jpg" alt="Running the ROS2 Basics workshop" loading="lazy">
+    </figure>
+    <div class="teach__text">
+      <p class="kicker">Teaching &amp; leadership</p>
+      <h3 class="teach__title">The fastest way to<br>learn it is to teach it.</h3>
+      <ul class="roles">
+        <li>
+          <b>Academics Lead &mdash; MLDA@EEE</b>
+          <span>Aug 2025 &mdash; ongoing</span>
+          <p>I plan two workshops for Learnova, MLDA's year-long machine learning
+            programme for 250+ participants &mdash; deciding what each one covers and
+            what people should walk away able to do.</p>
+        </li>
+        <li>
+          <b>Training &amp; Development &mdash; Garage@EEE</b>
+          <span>Aug 2024 &mdash; May 2025</span>
+          <p>Facilitated electronics and programming workshops, and connected with
+            companies to introduce real-world industry tools to participants.</p>
+        </li>
+        <li>
+          <b>ROS2 Basics &mdash; F1TENTH community</b>
+          <span>2025</span>
+          <p>Taught 150+ beginners to understand the ROS2 system, then to run and
+            optimize an autonomous racing car in simulation.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ OFF THE CLOCK ============================ -->
+<section class="band band--human" id="offclock">
+  <header class="band__head">
+    <p class="kicker">02 &mdash; the rest of it</p>
+    <h2 class="band__title lines">
+      <span class="line"><span>OFF THE CLOCK</span></span>
+    </h2>
+    <p class="band__lede">Everything here is analogue, slow, and entirely the point.</p>
+  </header>
+
+  <!-- ---------- music: open the score ---------- -->
+  <div class="score reveal" id="music" data-score>
+    <div class="score__intro">
+      <p class="kicker">Music</p>
+      <h3 class="score__title">Open the score</h3>
+      <p>Three different ways of listening to a room. Pick one.</p>
+    </div>
+
+    <div class="score__stage">
+      <button class="score__sheet" type="button" data-score-toggle aria-expanded="false">
+        <svg viewBox="0 0 180 230" aria-hidden="true">
+          <rect x="1" y="1" width="178" height="228" rx="4" class="sheet-bg"/>
+          <g class="sheet-staff">
+            <path d="M22 60h136M22 72h136M22 84h136M22 96h136M22 108h136"/>
+            <path d="M22 140h136M22 152h136M22 164h136M22 176h136M22 188h136"/>
+          </g>
+          <path class="sheet-clef" d="M44 112c9-4 13-13 11-22-2-8-11-11-16-5-4 5-2 13 5 17 9 5 20 12 20 24 0 9-8 15-16 13-6-2-9-8-6-13"/>
+          <g class="sheet-notes">
+            <ellipse cx="72" cy="84" rx="6" ry="4.4" transform="rotate(-20 72 84)"/>
+            <path d="M78 82V58"/>
+            <ellipse cx="104" cy="72" rx="6" ry="4.4" transform="rotate(-20 104 72)"/>
+            <path d="M110 70V46"/>
+            <ellipse cx="136" cy="96" rx="6" ry="4.4" transform="rotate(-20 136 96)"/>
+            <path d="M142 94V70"/>
+          </g>
+        </svg>
+        <span class="score__cue">Open</span>
+      </button>
+
+      <ul class="score__items">
+        <li class="score__item" style="--i:0">
+          <figure><img src="assets/img/music/choir.jpg" alt="Performing with the choir" loading="lazy"></figure>
+          <h4>Choir</h4>
+          <p>Holding your line while hearing seven others. The most useful engineering
+            skill I have never used a computer for.</p>
+        </li>
+        <li class="score__item" style="--i:1">
+          <figure><img src="assets/img/music/violin.jpg" alt="Playing violin on stage" loading="lazy"></figure>
+          <h4>Violin</h4>
+          <p>Second violin is a job of restraint. You are the harmonic glue, and
+            nobody notices until you stop.</p>
+        </li>
+        <li class="score__item" style="--i:2">
+          <figure><img src="assets/img/music/ukulele.jpg" alt="Singing with a ukulele" loading="lazy"></figure>
+          <h4>Ukulele</h4>
+          <p>Four strings, no setup, an instant room. This is the one that travels
+            with me.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tiles">
+    <!-- ---------- japanese ---------- -->
+    <article class="tile reveal" id="japanese">
+      <figure class="gallery" data-gallery>
+        <img src="assets/img/travel/itoshima.jpg" alt="The white torii at Itoshima" loading="lazy">
+        <img src="assets/img/gallery/japan-2.jpg" alt="In Japan" loading="lazy" hidden>
+      </figure>
+      <div class="tile__text">
+        <p class="kicker">日本語</p>
+        <h3 class="tile__title">Self-taught<br>to JLPT N1</h3>
+        <p>No class, no tutor — years of stubborn daily contact. N1 is the top of the
+          ladder, and the point where the language stops being a subject and starts
+          being a second way of arranging thoughts. Eighteen days in Niigata and Tokyo
+          mentoring high school students put it to work.</p>
+      </div>
+    </article>
+
+    <!-- ---------- community ---------- -->
+    <article class="tile reveal" id="community">
+      <figure class="gallery" data-gallery>
+        <img src="assets/img/story/sharing-talk.jpg" alt="Speaking about studying in Singapore" loading="lazy">
+        <img src="assets/img/gallery/community-2.jpg" alt="Taiwanese student community event" loading="lazy" hidden>
+      </figure>
+      <div class="tile__text">
+        <p class="kicker">Passing it on</p>
+        <h3 class="tile__title">Telling people<br>how it actually went</h3>
+        <p>I go back and talk to students in Taiwan about studying in Singapore — the
+          application, the money, the homesickness, the parts the brochures leave out.
+          I am also Vice President of the Japanese Appreciation Club and run events for
+          the Singapore Taiwanese Student Association.</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ---------- travel teaser ---------- -->
+  <a class="teaser reveal" href="travel.html">
+    <figure class="teaser__bg uncover">
+      <img src="assets/img/travel/teaser.jpg" alt="" loading="lazy">
+    </figure>
+    <div class="teaser__inner">
+      <p class="kicker">03 &mdash; the map</p>
+      <h3 class="teaser__title">I LIKE<br>GOING PLACES</h3>
+      <p class="teaser__lede">Every place I have actually stood in, pinned on a world map.</p>
+      <span class="teaser__cta">
+        Open the travel map
+        <span class="arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </span>
+    </div>
+  </a>
+
+  <!-- ---------- socials ---------- -->
+  <div class="social reveal" id="social">
+    <p class="kicker">Elsewhere</p>
+    <ul class="social__list">
+      <li><a href="https://www.linkedin.com/in/ting-ju-chen-251901241/" target="_blank" rel="noopener">
+        <span class="social__name">LinkedIn</span>
+        <span class="social__handle">/ting-ju-chen</span></a></li>
+      <li><a href="https://instagram.com/milunevergetlost" target="_blank" rel="noopener">
+        <span class="social__name">Instagram</span>
+        <span class="social__handle">@milunevergetlost</span></a></li>
+      <li><a href="https://ntudeepspeed.github.io/" target="_blank" rel="noopener">
+        <span class="social__name">NTU DeepSpeed</span>
+        <span class="social__handle">the team site</span></a></li>
+      <li><a href="https://github.com/cynthia-ccluna" target="_blank" rel="noopener">
+        <span class="social__name">GitHub</span>
+        <span class="social__handle">/cynthia-ccluna</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <p class="kicker kicker--center">04 &mdash; say hello</p>
+    <h2 class="contact__title lines">
+      <span class="line"><span>LET&rsquo;S BUILD</span></span>
+      <span class="line"><span>SOMETHING</span></span>
+    </h2>
+    <p class="contact__lede">Open to internships, research collaborations and robotics
+      teams that race things. Also to coffee, sheet music and travel recommendations.</p>
+    <a class="contact__mail" href="mailto:CH0002JU@e.ntu.edu.sg">CH0002JU@e.ntu.edu.sg</a>
+    <div class="contact__actions">
+      <a class="btn btn--solid" href="assets/docs/Resume-Chen-Ting-Ju.pdf" target="_blank" rel="noopener">Download résumé</a>
+      <a class="btn" href="https://www.linkedin.com/in/ting-ju-chen-251901241/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <span>Chen Ting-Ju (Cynthia)</span>
+  <span class="foot__mid">Nanyang Technological University · Singapore</span>
+  <span>&copy; <span id="year">2026</span></span>
+</footer>
+
+<script src="js/events-data.js"></script>
+<script src="js/site.js"></script>
+<script src="js/hero.js"></script>
+</body>
+</html>
